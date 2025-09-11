@@ -34,6 +34,7 @@ public class ArticleController {
 	// 게시글 등록
 	@PostMapping("/article/Write") // title, content
 	public String write(ArticleDTO articleDTO, Model model) {
+		
 		System.out.println("ㅁㄴㅇㄹ" + articleDTO);
 		log.info("정보 : {}",articleDTO);
 		log.warn("정보 : {}",articleDTO);
@@ -56,6 +57,7 @@ public class ArticleController {
 		System.out.println( saved ); // 저장된 정보 조회
 		
 		model.addAttribute("articleDTO",articleDTO);
+		
 		return "redirect:/article/List"; // 목록조회로 이동
 	}
 	

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.green.dto.Article;
+import com.green.dto.ArticleDTO;
 
 @Repository
 public interface ArticleRepository
@@ -20,4 +21,6 @@ public interface ArticleRepository
 	
 	@Transactional
 	void deleteByTitle(String string);
+
+
 }
