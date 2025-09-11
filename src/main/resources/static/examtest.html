@@ -86,7 +86,7 @@
 					const parser = new DOMParser();
 					const xmlDoc = parser.parseFromString(text, "application/xml")
 					
-					const toEl = xmlDoc.getElementsByTagName('to')
+					const toEl = xmlDoc.getElementsByTagName('to') // 배열
 					const fromEl = xmlDoc.getElementsByTagName('from')
 					const headingEl = xmlDoc.getElementsByTagName('heading')[0]
 					const bodyEl = xmlDoc.getElementsByTagName('body')[0]
@@ -119,10 +119,20 @@
 					<li>전화번호 : ${test.phone}</li>
 					<li>성별 : ${test.sex}</li>
 				</ul>`
-					resultEl.innerHTML += html
+					resultEl.innerHTML += `${html}`
 				} )
 			} )
+		console.log(5 + 3)
+		console.log(`5 < 3 : ${5 < 3}`) // false
+		console.log(`true > false : ${true > false}`)
+		console.log(`ab < ad : ${'ab' < 'ad'}`)
+		console.log(`0 < true : ${'0' < true}`)
+		console.log(`a.charCodeAt() : ${'a'.charCodeAt()}`)
+		console.log(`1 !== '1' : ${1 !== '1'}`)
+		console.log(`10 < 5 && 3 < 5 : ${10 < 5 && 3 < 5}`)
+		console.log(`${(5 + 4 * 3) !== 27}`)
 		})
+		
 		
 	</script>
 	
