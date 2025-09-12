@@ -24,6 +24,7 @@ public class ArticleService {
 		return articleList;
 	}
 	
+	// 추가
 	public Article create(ArticleDTO articleDTO) {
 		
 		System.out.println(articleDTO);
@@ -34,6 +35,23 @@ public class ArticleService {
 		}
 		Article saved = articleRepository.save(article);
 		return saved;
+	}
+	
+	// 한개 조회
+	public Article get(Long id) {
+		Article article = articleRepository.findById(id).orElse(null);
+		return article;
+	}
+	
+	public Article delete(Long id) {
+		
+		// 삭제할 떄는 미리 검색을 하고 cache memory 에서
+		Article target = articleRepository.findById(id).orElse(null);
+		
+		if(target == null )  return null;
+		articleRepository.delete(target);
+		
+		return target;
 	}
 }
 

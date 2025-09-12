@@ -21,6 +21,18 @@ public interface ArticleRepository
 	
 	@Transactional
 	void deleteByTitle(String string);
-
-
+	/*
+	switch (fruit) {
+		case "사과" :
+			System.out.println("dd");
+			break;
+		case "포도" : 
+			System.out.println(ㄴㄴ);
+			break;
+		default :
+			System.out.println("없음");
+			break;
+	}
+	*/
 }
+
