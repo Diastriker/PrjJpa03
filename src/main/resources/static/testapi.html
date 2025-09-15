@@ -223,6 +223,38 @@
 						aEls[0].click();
 					} )
 					break;
+					
+				case 'patch' : // 수정(일부)
+				  if( idEl.value.trim() == '' ) {
+					  alert(`수정할 아이디가 없습니다`)
+					  return;
+				  }
+					fetch(url, {
+						  method: 'PATCH',
+						  body: JSON.stringify({ // 서버로 data 를 보낼때 json 문자열로 보내야 한다
+							  id : idEl.value,
+						    title   : titleEl.value,
+						    content : contentEl.value
+						  }),
+						  headers: {
+						    'Content-type': 'application/json; charset=UTF-8',
+						  },
+						})
+						  .then( (response) => {
+							  if( response.status == 400 ) {
+								  alert(`${idEl.value}번 수정실패`)
+								  return;
+							  }
+							  return response.json()
+						  })
+						  .then((json) => {
+							  console.log('PATCH : ', json)
+							  alert(idEl.value + '번이 수정 되었습니다')
+							  textClear(); 
+							  aEls[0].click(); // 자동으로 목록조회 a tag 클릭
+							  }) // 추가완료
+					
+					break;
 				} // switch end
 			}) // a.click end			
 		} ) // aEls.forEach end

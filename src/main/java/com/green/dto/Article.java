@@ -6,12 +6,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Builder;
 import lombok.Data;
 
 
 // @AllArgsConstructor 모든 인자가 있는 생성자
 // @NoArgsConstructor  기본 생성자
 @Entity
+@Builder
 @Data        //@RequiredArgsConstructor - null 못받음
 public class Article {
 	

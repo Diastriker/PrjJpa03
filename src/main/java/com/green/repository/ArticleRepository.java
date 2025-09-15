@@ -11,7 +11,7 @@ import com.green.dto.ArticleDTO;
 
 @Repository
 public interface ArticleRepository
-                             // Article 타입의, Key타입이 Long인것
+                             // <엔티티 타입, PK타입>
        extends   CrudRepository<Article, Long>{
 	
 	@Override
@@ -34,5 +34,7 @@ public interface ArticleRepository
 			break;
 	}
 	*/
+
+	
 }
 

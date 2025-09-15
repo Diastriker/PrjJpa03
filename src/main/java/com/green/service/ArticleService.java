@@ -53,6 +53,18 @@ public class ArticleService {
 		
 		return target;
 	}
+	public Article update(Article article) {
+		// 1. 수정할 데이터를 검색
+		Long id = article.getId();
+		Article target = articleRepository.findById(id).orElse(null);
+		if(target == null || target.getId() != id) {
+			log.info("id:{} article{}", id, article);
+			return null; // 400 띄울려면 null을 리턴해야함
+		}
+		target = articleRepository.save(article);
+
+		return target;
+	}
 }
 
 
